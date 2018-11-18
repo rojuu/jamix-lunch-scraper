@@ -25,13 +25,13 @@ const parseFood = () => {
   const page = await browser.newPage()
   await page.goto('https://www.jamix.fi/ruokalistat/?anro=97440&k=50&mt=4', {waitUntil: 'networkidle2'})
   
-  // Clicking on next page button to get a weekday
-  await page.evaluate(() => {
-    document.querySelector('.v-button-date--next').click()
-  })
+  // Clicking on next page button to get a weekday (for testing on the weekends)
+  // page.evaluate(() => {
+  //   document.querySelector('.v-button-date--next').click()
+  // })
 
   // When we find this element, we can assume the page is loaded.
-  await page.waitForSelector('.multiline-button-caption-text')
+  //await page.waitForSelector('.multiline-button-caption-text')
 
   const contents1and2 = await page.evaluate(parseFood)
   // Clicks on the "Linjasto 3" button
