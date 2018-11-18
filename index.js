@@ -42,9 +42,10 @@ const parseFood = () => {
   const contents3 = await page.evaluate(parseFood)
   
   //await page.screenshot({path: 'example.png'})
+
+  const contents = contents1and2.concat(contents3);
   
-  console.log(contents1and2)
-  console.log(contents3)
+  console.log(contents)
   
   await browser.close()
 })()
