@@ -31,7 +31,7 @@ const parseFood = () => {
   // })
 
   // When we find this element, we can assume the page is loaded.
-  //await page.waitForSelector('.multiline-button-caption-text')
+  await page.waitForSelector('.multiline-button-caption-text')
 
   const contents1and2 = await page.evaluate(parseFood)
   // Clicks on the "Linjasto 3" button
