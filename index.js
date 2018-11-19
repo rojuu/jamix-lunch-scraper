@@ -14,7 +14,8 @@ const parseFood = () => {
         // This finds the title inside the element
         title: element.querySelector('.multiline-button-caption-text').textContent,
         // This finds each separate lunch item inside the element 
-        contents: Array.from(element.querySelectorAll('.multiline-button-content-text')).map(x => x.textContent)
+        contents: Array.from(element.querySelectorAll('.multiline-button-content-text'))
+          .map(x => x.querySelector('.item-name').textContent)
       }
     })
 }
